@@ -61,14 +61,14 @@ export const HelpSelfSearch = ({ handleGoBack }) => {
 
       <div className="container-row h-display-flex">
         {searchedData &&
-          <>
+          <React.Fragment>
             <h5 className="h-mt-2 h-mb-1">Výsledky vyhledávání na Heureka.cz</h5>
             {searchedData.items.map((item) =>
               <div className={classes([style.result, 'col-lg-3'])}>
                 <a href={item.link} className={style.link}><img src={item.pagemap.cse_image[0].src} alt="Result" /></a>
                 <a href={item.link} className={style.link}>{transformTitle(item.title)}</a>
               </div>)}
-          </>
+          </React.Fragment>
         }
       </div>
       <div className="container-row h-mt-3">

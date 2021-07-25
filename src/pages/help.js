@@ -21,7 +21,7 @@ export const Help = () => {
   }
   console.log(values)
   return (
-    <>
+    <React.Fragment>
       <Topbar />
       <div className="container-row">
         {!values ? <h3 className="h-text-center h-mb-3">Vyber si verzi nápovědy</h3> : values.model.value === "ano" ? <h3 className="h-text-center h-mb-3">Znám model svého notebooku</h3> : <h3 className="h-text-center h-mb-3">Neznám model svého notebooku</h3>}
@@ -30,6 +30,6 @@ export const Help = () => {
         {values && values.model.value === "ne" && values.os.value === "windows_10" && !goBack && <HelpSearchWin handleGoBack={handleGoBack} />}
         {values && values.model.value === "ne" && values.os.value === "macos" && !goBack && <HelpMacOS handleGoBack={handleGoBack} />}
       </div>
-    </>
+    </React.Fragment>
   )
 }

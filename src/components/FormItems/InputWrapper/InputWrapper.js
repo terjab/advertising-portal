@@ -6,7 +6,7 @@ import style from './InputWrapper.module.scss';
 
 const InputWrapper = (props) => {
   const { className, meta, note } = props;
-  const error = !!meta?.touched && !!meta?.error;
+  const error = !!meta.touched && !!meta.error;
 
   return (
     <div

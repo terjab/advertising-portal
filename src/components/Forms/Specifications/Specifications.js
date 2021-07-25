@@ -123,7 +123,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4 h-mb-1">
                 <Field name="brand" control="brand" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="brand">Značka</label>
                         <Tooltip id="brand" message={tooltips.BRAND} />
@@ -136,7 +136,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={brandOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
@@ -144,7 +144,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4">
                 <Field name="model" control="model" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="model">Model</label>
                         <Tooltip id="model" message={tooltips.MODEL} />
@@ -157,7 +157,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={modelOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
@@ -174,7 +174,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4">
                 <Field name="color" control="color" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="color">Barva</label>
                       </div>
@@ -186,7 +186,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={colorOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
@@ -196,7 +196,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4">
                 <Field name="operating_system" control="operating_system" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="operating_system">Operační systém</label>
                         <Tooltip id="operating_system" message={tooltips.OPERATING_SYSTEM} />
@@ -209,14 +209,14 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={osOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
               <div className="col-lg-4">
                 <Field name="extra_functions" control="extra_functions" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <label className={classes([style['label-tooltipless'], "h-mr-1"])} htmlFor="extra_functions">Rozšířené funkce</label>
                       <InputWrapper meta={meta}>
                         <MultiSelect
@@ -227,7 +227,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                         />
 
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
@@ -240,7 +240,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4">
                 <Field name="memory_type" control="memory_type" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="memory_type">Typ úložiště</label>
                         <Tooltip id="memory_type" message={tooltips.MEMORY_TYPE} />
@@ -253,14 +253,14 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={memoryOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
               <div className="col-lg-4">
                 <Field name="memory_capacity" control="memory_capacity" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="memory_capacity">Velikost pevného disku</label>
                         <Tooltip id="memory_capacity" message={tooltips.MEMORY_CAPACITY} />
@@ -273,7 +273,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={memoryCapacityOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
@@ -286,7 +286,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4">
                 <Field name="ram_capacity" control="ram_capacity" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="ram_capacity">Velikost operační paměti RAM</label>
                         <Tooltip id="ram_capacity" message={tooltips.RAM_CAPACITY} />
@@ -299,7 +299,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={ramOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
@@ -312,7 +312,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4">
                 <Field name="cpu" control="cpu" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="cpu">Typ procesoru</label>
                         <Tooltip id="cpu" message={tooltips.CPU} />
@@ -325,7 +325,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={cpuOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
@@ -342,7 +342,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4">
                 <Field name="cpu_cores" control="cpu_cores" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="cpu_cores">Počet jader procesoru</label>
                         <Tooltip id="cpu_cores" message={tooltips.CPU_CORES} />
@@ -355,7 +355,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={cpuCoresOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
@@ -368,7 +368,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4">
                 <Field name="gpu_brand" control="gpu_brand" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="gpu_brand">Značka grafické karty</label>
                       </div>
@@ -380,14 +380,14 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={gpuBrandOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
               <div className="col-lg-4">
                 <Field name="gpu_type" control="gpu_type" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="gpu_type">Typ grafické karty</label>
                         <Tooltip id="gpu_type" message={tooltips.GPU_TYPES} />
@@ -400,7 +400,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={gpuTypesOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
@@ -409,7 +409,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
               <div className="col-lg-4">
                 <Field name="gpu_memory" control="gpu_memory" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="gpu_memory">Paměť grafické karty</label>
                         <Tooltip id="gpu_memory" message={tooltips.GPU_MEMORY} />
@@ -422,14 +422,14 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={gpuMemoryOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
               <div className="col-lg-4">
                 <Field name="gpu_chip" control="gpu_chip" className={style['edit-select']}>
                   {({ field, form, meta }) => (
-                    <>
+                    <React.Fragment>
                       <div className="h-display-flex h-mb-05">
                         <label className="h-mr-1" htmlFor="gpu_chip">Čip grafické karty</label>
                         <Tooltip id="gpu_chip" message={tooltips.GPU_CHIP} />
@@ -442,7 +442,7 @@ export const Specifications = ({ showSpec, ad, addAd, doneClicked }) => {
                           options={gpuChipOptions}
                         />
                       </InputWrapper>
-                    </>
+                    </React.Fragment>
                   )}
                 </Field>
               </div>
