@@ -185,6 +185,7 @@ export const NewAd = ({ showSpec, ad, addAd, dispatch }) => {
               <Button disabled={!isValid} theme="primary" type="button" className={style.submit}>Next</Button>
             </div>
           </div>
+          <pre>{JSON.stringify(values, null, 2)}</pre>
         </Form>
       )
       }

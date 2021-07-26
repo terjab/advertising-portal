@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import style from '../styles/pages/Add.module.scss';
 
@@ -7,6 +7,7 @@ import { NewAd } from '../components/Forms/NewAdd/NewAdd';
 import { Specifications } from '../components/Forms/Specifications/Specifications';
 import { Button } from '../components/UI/Button/Button';
 import { useHistory } from 'react-router-dom';
+import { CreateAd } from '../api/ads/create-ad';
 
 export const Add = () => {
   const [showSpec, setShowSpec] = useState(false);
@@ -22,6 +23,39 @@ export const Add = () => {
       ...values,
     })
   }
+
+  useEffect(() => {
+    ad && console.log(ad)
+    if (ad && ad.specifications) {
+      const formatted = {
+        Title: ad.title,
+        Condition: ad.condition.label,
+        City: ad.city,
+        Type: ad.type.label,
+        Description: ad.description,
+        Price: ad.price,
+        Category: {
+          Brand: ad.specifications.brand.label,
+          Model: ad.specifications.model.label,
+          OperatingSystem: ad.specifications.operating_system.label,
+          MemoryType: ad.specifications.memory_type.label,
+          MemoryCapacity: ad.specifications.memory_capacity.label,
+          RamCapacity: ad.specifications.ram_capacity.label,
+          Cpu: ad.specifications.cpu.label,
+          CpuFrequency: ad.specifications.cpu_frequency,
+          GpuBrand: ad.specifications.gpu_brand.label,
+          CpuCores: ad.specifications.cpu_cores.label,
+          GpuType: ad.specifications.gpu_type.label,
+          GpuMemory: ad.specifications.gpu_memory.label,
+          GpuChip: ad.specifications.gpu_chip.label,
+          Diagonal: ad.specifications.diagonal,
+          Color: ad.specifications.color,
+        },
+        Photos: ad.photos.map(item => item.fileToBase64),
+      }
+      const ad = CreateAd(formatted);
+    }
+  }, [ad])
 
   const handleShowSpec = () => {
     setShowSpec(!showSpec)

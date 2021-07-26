@@ -1,5 +1,5 @@
 import React from 'react'
-import { URL } from '../../../'
+import { URL } from '../../config'
 
 export const CreateAd = async (ad) => {
   const response = await fetch(`${URL}/ad`, {
