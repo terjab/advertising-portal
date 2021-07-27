@@ -22,40 +22,48 @@ export const Add = () => {
       ...ad,
       ...values,
     })
+    handleAdd({
+      ...ad,
+      ...values,
+    })
+
   }
 
-  useEffect(() => {
-    ad && console.log(ad)
-    if (ad && ad.specifications) {
+  const handleAdd = (advert) => {
+    if (advert && advert.specifications) {
+      const photos = {};
+      advert.photos.map((item, i) => photos[i] = item.fileToBase64)
+
       const formatted = {
-        Title: ad.title,
-        Condition: ad.condition.label,
-        City: ad.city,
-        Type: ad.type.label,
-        Description: ad.description,
-        Price: ad.price,
+        Title: advert.title,
+        Condition: advert.condition.label,
+        City: advert.city,
+        Type: advert.type.label,
+        Description: advert.description,
+        Price: advert.price,
         Category: {
-          Brand: ad.specifications.brand.label,
-          Model: ad.specifications.model.label,
-          OperatingSystem: ad.specifications.operating_system.label,
-          MemoryType: ad.specifications.memory_type.label,
-          MemoryCapacity: ad.specifications.memory_capacity.label,
-          RamCapacity: ad.specifications.ram_capacity.label,
-          Cpu: ad.specifications.cpu.label,
-          CpuFrequency: ad.specifications.cpu_frequency,
-          GpuBrand: ad.specifications.gpu_brand.label,
-          CpuCores: ad.specifications.cpu_cores.label,
-          GpuType: ad.specifications.gpu_type.label,
-          GpuMemory: ad.specifications.gpu_memory.label,
-          GpuChip: ad.specifications.gpu_chip.label,
-          Diagonal: ad.specifications.diagonal,
-          Color: ad.specifications.color,
+          Brand: advert.specifications.brand.label,
+          Model: advert.specifications.model.label,
+          OperatingSystem: advert.specifications.operating_system.label,
+          MemoryType: advert.specifications.memory_type.label,
+          MemoryCapacity: advert.specifications.memory_capacity.label,
+          RamCapacity: advert.specifications.ram_capacity.label,
+          Cpu: advert.specifications.cpu.label,
+          CpuFrequency: advert.specifications.cpu_frequency,
+          GpuBrand: advert.specifications.gpu_brand.label,
+          CpuCores: advert.specifications.cpu_cores.label,
+          GpuType: advert.specifications.gpu_type.label,
+          GpuMemory: advert.specifications.gpu_memory.label,
+          GpuChip: advert.specifications.gpu_chip.label,
+          Diagonal: advert.specifications.diagonal,
+          Color: advert.specifications.color.label,
         },
-        Photos: ad.photos.map(item => item.fileToBase64),
+        Photos: photos,
       }
-      const ad = CreateAd(formatted);
+      CreateAd(formatted);
     }
-  }, [ad])
+  }
+
 
   const handleShowSpec = () => {
     setShowSpec(!showSpec)
